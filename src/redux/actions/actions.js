@@ -138,7 +138,7 @@ export const registerUser = (user) => async()=>{
 export const loginUser = (user) => async()=>{
     try{
         await axios.post('https://findbook-api.herokuapp.com/auth/login',user)
-            .then(({data})=>console.log(data))
+            .then(({data})=>window.localStorage.setItem('token',data.token))
 
         // await axios.post('http://localhost:3001/auth/login',user)
         //     .then(({data})=>window.localStorage.setItem('token',data.token))
